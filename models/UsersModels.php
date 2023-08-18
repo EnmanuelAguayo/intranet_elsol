@@ -12,6 +12,8 @@ class Users extends Conexion{
         $email = $_POST['emailUser'];
         $pass = $_POST['passUser'];
 
+
+
         if (isset($_POST['g-recaptcha-response'])) {
           $secretkey = "6Lda_EUfAAAAAEyoy9frTRl7fZB0OUoItnzhbFhY";
           $captcha = $_POST['g-recaptcha-response'];
@@ -62,7 +64,6 @@ class Users extends Conexion{
             }else{
               // m1
               header("Location: " . Conexion::ruta() . "view/index.php?m=1");
-              $this->errors .= "credenciales incorrectas </br>";
             }
           }
         }
